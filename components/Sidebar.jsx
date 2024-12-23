@@ -17,12 +17,12 @@ export default function Sidebar() {
           <li>
             <div className="relative group">
               <div className="text-black hover:text-white cursor-pointer">
-                Organization Profie
+                My Organization
               </div>
               <ul className="absolute left-0 hidden mt-1 bg-white text-black group-hover:block shadow-lg rounded-md w-48">
                 <li>
                   <Link href={`/pages/organization`}>
-                    <div className="px-4 py-2">Organizations</div>
+                    <div className="px-4 py-2">Organization Profile.</div>
                   </Link>
                 </li>
                 <li>

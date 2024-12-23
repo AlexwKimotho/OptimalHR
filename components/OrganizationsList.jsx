@@ -22,43 +22,53 @@ export default async function OrganizationsList() {
   const { organizations } = (await getOrganizations()) || { organizations: [] };
 
   return (
-      <div className="bg-white rounded-3 p-4">
-        <div>
-          <Link className="bg-black text-amber-50" href={`/Organizations/addOrganization`}>
+    <div className="min-h-screen bg-gray-100 py-10 w-full">
+      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-2xl font-bold text-gray-800">Organizations</h1>
+          <Link
+            href={`/Organizations/addOrganization`}
+            className="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700 transition duration-200"
+          >
             Add Organization
           </Link>
         </div>
-        <table className="w-full table-auto">
-          <thead>
-          <tr className="bg-gray-200 ">
-            <th className="px-4 py-2">Company Name</th>
-            <th className="px-4 py-2">Address</th>
-            <th className="px-4 py-2">Mission Statement</th>
-            <th className="px-4 py-2">Vision Statement</th>
-            <th className="px-4 py-2">Awards</th>
-            <th className="px-4 py-2">Actions</th>
-          </tr>
-          </thead>
-          <tbody>
-          {organizations.map((t) => (
-              <tr key={t._id} className="bg-white">
-                <td className="px-4 py-2">{t.companyName}</td>
-                <td className="px-4 py-2">{t.address}</td>
-                <td className="px-4 py-2">{t.missionStatement}</td>
-                <td className="px-4 py-2">{t.visionStatement}</td>
-                <td className="px-4 py-2">{t.awards}</td>
-                <td className="px-4 py-2">
-                  <div className="flex gap-2">
-                    <RemoveBtn id={t._id} />
-                    <Link href={`/Organizations/editOrganizations/${t._id}`}>
-                      <HiPencilAlt size={24} />
-                    </Link>
-                  </div>
-                </td>
-              </tr>
+        <div className="flex flex-col gap-6">
+          {organizations.map((organization) => (
+            <div
+              key={organization._id}
+              className="bg-gray-50 rounded-lg shadow-lg p-6 w-full"
+            >
+              <div>
+                <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                  {organization.companyName}
+                </h2>
+                <p className="text-gray-600 mb-1">
+                  <strong>Address:</strong> {organization.address}
+                </p>
+                <p className="text-gray-600 mb-1">
+                  <strong>Mission:</strong> {organization.missionStatement}
+                </p>
+                <p className="text-gray-600 mb-1">
+                  <strong>Vision:</strong> {organization.visionStatement}
+                </p>
+                <p className="text-gray-600">
+                  <strong>Awards:</strong> {organization.awards}
+                </p>
+              </div>
+              <div className="flex items-center gap-4 mt-4">
+                <RemoveBtn id={organization._id} />
+                <Link href={`/Organizations/editOrganizations/${organization._id}`}>
+                  <HiPencilAlt
+                    size={24}
+                    className="text-blue-500 hover:text-blue-700 cursor-pointer"
+                  />
+                </Link>
+              </div>
+            </div>
           ))}
-          </tbody>
-        </table>
+        </div>
       </div>
+    </div>
   );
 }
