@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react"; // Import React and hooks
+import React from "react";
 import Link from "next/link";
-import RemoveBtn from "../app/Divisions/RemoveBtn";
+import RemoveBtn from "../app/CRUD/Divisions/RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 import DataTable from "react-data-table-component";
 

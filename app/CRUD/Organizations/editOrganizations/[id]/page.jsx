@@ -1,4 +1,4 @@
-import EditOrganizationsForm from "@/app/Organizations/EditOrganizationsForm";
+import EditOrganizationsForm from "@/app/CRUD/Organizations/EditOrganizationsForm";
 
 const getOrganizationById = async (id) => {
   try {

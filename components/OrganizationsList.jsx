@@ -1,5 +1,5 @@
 import Link from "next/link";
-import RemoveBtn from "../app/Organizations/RemoveBtn";
+import RemoveBtn from "../app/CRUD/Organizations/RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
 const getOrganizations = async () => {

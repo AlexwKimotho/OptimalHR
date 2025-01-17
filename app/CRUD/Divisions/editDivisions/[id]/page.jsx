@@ -1,4 +1,4 @@
-import EditDivisionsForm from "@/app/Divisions/EditDivisionsForm";
+import EditDivisionsForm from "@/app/CRUD/Divisions/EditDivisionsForm";
 
 const getDivisionsById = async (id) => {
   try {
