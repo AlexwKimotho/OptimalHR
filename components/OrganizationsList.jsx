@@ -58,7 +58,7 @@ export default async function OrganizationsList() {
               </div>
               <div className="flex items-center gap-4 mt-4">
                 <RemoveBtn id={organization._id} />
-                <Link href={`/Organizations/editOrganizations/${organization._id}`}>
+                <Link href={`/CRUD/Organizations/editOrganizations/${organization._id}`}>
                   <HiPencilAlt
                     size={24}
                     className="text-blue-500 hover:text-blue-700 cursor-pointer"

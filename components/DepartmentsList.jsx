@@ -2,58 +2,48 @@
 
 import React from "react";
 import Link from "next/link";
-import RemoveBtn from "../app/CRUD/Divisions/RemoveBtn";
+import RemoveBtn from "../app/CRUD/Departments/RemoveButton";
 import { HiPencilAlt } from "react-icons/hi";
 import DataTable from "react-data-table-component";
 
-const getDivisions = async () => {
+const getDepartments = async () => {
     try {
-        const res = await fetch("http://localhost:3000/api/divisions", {
+        const res = await fetch("http://localhost:3000/api/departments", {
             cache: "no-store",
         });
 
         if (!res.ok) {
-            throw new Error("Failed to fetch Divisions");
+            throw new Error("Failed to fetch Departments");
         }
 
         return res.json();
     } catch (error) {
-        console.log("Error loading Divisions: ", error);
+        console.log("Error loading Departments: ", error);
     }
 };
 
-export default function DivisionsList() {
-    const [divisions, setDivisions] = React.useState([]);
+export default function DepartmentsList() {
+    const [departments, setDepartments] = React.useState([]);
 
     React.useEffect(() => {
-        const fetchDivisions = async () => {
-            const data = await getDivisions();
-            if (data?.divisions) {
-                setDivisions(data.divisions);
+        const fetchDepartments = async () => {
+            const data = await getDepartments();
+            if (data?.departments) {
+                setDepartments(data.departments);
             }
         };
-        fetchDivisions();
+        fetchDepartments();
     }, []);
 
-    // Define columns for the data table
     const columns = [
         {
-            name: "Division Name",
-            selector: (row) => row.divisionName,
+            name: "Department Name",
+            selector: (row) => row.departmentName,
             sortable: true,
         },
         {
             name: "Division Head",
-            selector: (row) => row.divisionHead,
-            sortable: true,
-        },
-        {
-            name: "Additional Info",
-            selector: (row) => row.additionalInfo,
-        },
-        {
-            name: "Created On",
-            selector: (row) => row.createdOn,
+            selector: (row) => row.departmentHead,
             sortable: true,
         },
         {
@@ -61,7 +51,7 @@ export default function DivisionsList() {
             cell: (row) => (
                 <div className="flex gap-4">
                     <RemoveBtn id={row._id} />
-                    <Link href={`/Organizations/editOrganizations/${row._id}`}>
+                    <Link href={`/CRUD/Department/editDepartment${row._id}`}>
                         <HiPencilAlt size={24} className="text-gray-500 hover:text-blue-600 transition duration-200" />
                     </Link>
                 </div>
@@ -74,15 +64,15 @@ export default function DivisionsList() {
             <div className="mb-4">
                 <Link
                     className="bg-blue-600 text-amber-50 py-2 px-6 rounded-md shadow-md hover:bg-blue-700 transition duration-200"
-                    href={`/CRUD/Divisions/addDivision`}
+                    href={`/CRUD/Departments/addDepartment`}
                 >
                     Add Department
                 </Link>
             </div>
             <DataTable
-                title="Divisions"
+                title="Departments"
                 columns={columns}
-                data={divisions}
+                data={departments}
                 pagination
                 highlightOnHover
                 responsive

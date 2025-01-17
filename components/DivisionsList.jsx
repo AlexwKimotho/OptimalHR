@@ -87,7 +87,7 @@ export default function DivisionsList() {
             cell: (row) => (
                 <div className="flex gap-4">
                     <RemoveBtn id={row._id} />
-                    <Link href={`/Organizations/editOrganizations/${row._id}`}>
+                    <Link href={`/CRUD/Divisions/editDivisions/${row._id}`}>
                         <HiPencilAlt size={24} className="text-gray-500 hover:text-blue-600 transition duration-200" />
                     </Link>
                 </div>
