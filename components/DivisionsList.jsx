@@ -5,6 +5,7 @@ import Link from "next/link";
 import RemoveBtn from "../app/CRUD/Divisions/RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 import DataTable from "react-data-table-component";
+import Papa from "papaparse";
 
 const getDivisions = async () => {
     try {
@@ -22,6 +23,32 @@ const getDivisions = async () => {
     }
 };
 
+const exportToCSV = (data) => {
+    const csv = Papa.unparse(data);
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.setAttribute("href", url);
+    a.setAttribute("download", "divisions.csv");
+    a.click();
+};
+
+const handleFileUpload = (event, setDivisions) => {
+    const file = event.target.files[0];
+    if (file) {
+        Papa.parse(file, {
+            complete: (result) => {
+                const importedDivisions = result.data;
+                setDivisions((prevDivisions) => [
+                    ...prevDivisions,
+                    ...importedDivisions,
+                ]);
+            },
+            header: true,
+        });
+    }
+};
+
 export default function DivisionsList() {
     const [divisions, setDivisions] = React.useState([]);
 
@@ -35,7 +62,6 @@ export default function DivisionsList() {
         fetchDivisions();
     }, []);
 
-    // Define columns for the data table
     const columns = [
         {
             name: "Division Name",
@@ -71,14 +97,31 @@ export default function DivisionsList() {
 
     return (
         <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="mb-4">
+            <div className="mb-4 flex gap-4">
                 <Link
                     className="bg-blue-600 text-amber-50 py-2 px-6 rounded-md shadow-md hover:bg-blue-700 transition duration-200"
                     href={`/CRUD/Divisions/addDivision`}
                 >
                     Add Division
                 </Link>
+                
+                {/* Bulk Export Button */}
+                <button
+                    className="bg-green-600 text-amber-50 py-2 px-6 rounded-md shadow-md hover:bg-green-700 transition duration-200"
+                    onClick={() => exportToCSV(divisions)}
+                >
+                    Export CSV
+                </button>
+
+                {/* Bulk Import Input */}
+                <input
+                    type="file"
+                    accept=".csv"
+                    className="py-2 px-6 border border-gray-300 rounded-md"
+                    onChange={(e) => handleFileUpload(e, setDivisions)}
+                />
             </div>
+
             <DataTable
                 title="Divisions"
                 columns={columns}

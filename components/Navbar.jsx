@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <div className="flex justify-between items-center bg-black">
       <Link className="text-white font-bold" href={"/"}>
-        iScope HR
+      OptimaHR
       </Link>
 
     </div>

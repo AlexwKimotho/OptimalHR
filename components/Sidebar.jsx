@@ -6,7 +6,7 @@ export default function Sidebar() {
       {/* Sidebar */}
       <div className="bg-black text-white w-64 p-6 shadow-lg">
         {/* Logo */}
-        <div className="text-2xl font-bold mb-6 text-center">iScope HR</div>
+        <div className="text-2xl font-bold mb-6 text-center">Profile Picture</div>
         {/* Navigation */}
         <ul className="space-y-4">
           <li>
