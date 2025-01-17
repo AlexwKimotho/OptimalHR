@@ -31,7 +31,7 @@ export default function Sidebar() {
                   </Link>
                 </li>
                 <li className="hover:bg-gray-200">
-                  <Link href="/pages/organization/departments">
+                  <Link href="/pages/departments">
                     <div className="px-4 py-2">Departments</div>
                   </Link>
                 </li>
