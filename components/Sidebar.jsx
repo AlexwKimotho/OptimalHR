@@ -4,19 +4,19 @@ export default function Sidebar() {
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
-      <div className="bg-red-800 text-white w-64 p-6 shadow-lg">
+      <div className="bg-black text-white w-64 p-6 shadow-lg">
         {/* Logo */}
         <div className="text-2xl font-bold mb-6 text-center">iScope HR</div>
         {/* Navigation */}
         <ul className="space-y-4">
           <li>
             <Link href="/">
-              <div className="text-black hover:text-white">Dashboard</div>
+              <div className="text-white hover:text-white">Dashboard</div>
             </Link>
           </li>
           <li>
             <div className="relative group">
-              <div className="text-black hover:text-white cursor-pointer">
+              <div className="text-white hover:text-white cursor-pointer">
                 My Organization
               </div>
               <ul className="absolute left-0 hidden mt-1 bg-white text-black group-hover:block shadow-lg rounded-md w-48">
@@ -46,7 +46,7 @@ export default function Sidebar() {
 
           <li>
             <Link href="/">
-              <div className="text-black hover:text-white">Contact</div>
+              <div className="text-white hover:text-white">Contact</div>
             </Link>
           </li>
         </ul>

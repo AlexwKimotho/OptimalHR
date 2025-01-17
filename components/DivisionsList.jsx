@@ -74,7 +74,7 @@ export default function DivisionsList() {
             <div className="mb-4">
                 <Link
                     className="bg-blue-600 text-amber-50 py-2 px-6 rounded-md shadow-md hover:bg-blue-700 transition duration-200"
-                    href={`/Divisions/addDivision`}
+                    href={`/CRUD/Divisions/addDivision`}
                 >
                     Add Division
                 </Link>

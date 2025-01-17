@@ -27,7 +27,7 @@ export default async function OrganizationsList() {
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-gray-800">Organizations</h1>
           <Link
-            href={`/Organizations/addOrganization`}
+            href={`/CRUD/Organizations/addOrganization`}
             className="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700 transition duration-200"
           >
             Add Organization
