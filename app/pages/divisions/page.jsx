@@ -1,4 +1,3 @@
-import TopicsList from "@/components/TopicsList";
 import DivisionsList from "@/components/DivisionsList";
 
 export default function Home() {
