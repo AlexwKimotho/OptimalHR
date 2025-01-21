@@ -1,13 +1,25 @@
 "use client";
 
-import React, { useState } from 'react';
-import { ChevronDown, Layout, Users, Award, Phone, Building2 } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  ChevronDown,
+  Layout,
+  Users,
+  Award,
+  Phone,
+  Building2,
+} from "lucide-react";
 
 const Sidebar = () => {
   const [isOrgMenuOpen, setIsOrgMenuOpen] = useState(false);
+  const [isTeseMenuOpen, setIsTeseMenuOpen] = useState(false);
 
   const toggleOrgMenu = () => {
     setIsOrgMenuOpen(!isOrgMenuOpen);
+  };
+
+  const toggleTeseMenu = () => {
+    setIsTeseMenuOpen(!isTeseMenuOpen);
   };
 
   return (
@@ -20,7 +32,9 @@ const Sidebar = () => {
               <span className="text-2xl">👤</span>
             </div>
           </div>
-          <h1 className="text-xl font-semibold text-center mt-4">Profile Picture</h1>
+          <h1 className="text-xl font-semibold text-center mt-4">
+            Profile Picture
+          </h1>
         </div>
 
         {/* Navigation */}
@@ -45,26 +59,61 @@ const Sidebar = () => {
               >
                 <div className="flex items-center">
                   <Building2 className="w-5 h-5 mr-3" />
-                  <span>My Organization</span>
+                  <span>Institutions</span>
                 </div>
-                <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isOrgMenuOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform duration-200 ${
+                    isOrgMenuOpen ? "rotate-180" : ""
+                  }`}
+                />
               </button>
 
               {/* Dropdown Menu */}
-              <ul className={`mt-2 ml-4 space-y-1 ${isOrgMenuOpen ? 'block' : 'hidden'}`}>
+              <ul
+                className={`mt-2 ml-4 space-y-1 ${
+                  isOrgMenuOpen ? "block" : "hidden"
+                }`}
+              >
                 <li>
                   <a href="/pages/organization" className="block">
                     <div className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-800 rounded-lg transition-colors duration-150 ease-in-out">
                       <Users className="w-4 h-4 mr-3" />
-                      <span>Organization Profile</span>
+                      <span>Business Accounts</span>
                     </div>
                   </a>
                 </li>
+              </ul>
+            </li>
+
+            {/* TESE Dropdown */}
+            <li>
+              <button
+                onClick={toggleTeseMenu}
+                className="w-full flex items-center justify-between px-4 py-3 text-gray-300 hover:bg-gray-800 rounded-lg transition-colors duration-150 ease-in-out"
+                aria-expanded={isTeseMenuOpen}
+              >
+                <div className="flex items-center">
+                  <Building2 className="w-5 h-5 mr-3" />
+                  <span>TESE</span>
+                </div>
+                <ChevronDown
+                  className={`w-5 h-5 transition-transform duration-200 ${
+                    isTeseMenuOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {/* Dropdown Menu */}
+              <ul
+                className={`mt-2 ml-4 space-y-1 ${
+                  isTeseMenuOpen ? "block" : "hidden"
+                }`}
+              >
                 <li>
                   <a href="/pages/divisions" className="block">
                     <div className="flex items-center px-4 py-2 text-gray-400 hover:bg-gray-800 rounded-lg transition-colors duration-150 ease-in-out">
                       <Building2 className="w-4 h-4 mr-3" />
-                      <span>Divisions</span>
+                      <span>User Management</span>
                     </div>
                   </a>
                 </li>
