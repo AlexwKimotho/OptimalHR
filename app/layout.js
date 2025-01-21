@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} bg-gray-100`}>
         {isSignInPage ? (
           // Render only the SignIn content
-          <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-indigo-500 to-purple-600">
+          <div>
             {children}
           </div>
         ) : (
