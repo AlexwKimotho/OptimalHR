@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 
 export default function SignIn() {
   return (
@@ -100,7 +101,7 @@ export default function SignIn() {
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 85%)",
           }}
         >
-          <img
+          <Image
             src="https://media.istockphoto.com/id/175009379/photo/giant-panda-bear-eating-bamboo.jpg?s=2048x2048&w=is&k=20&c=b8ZM_jrzBHX-rXCoSx1JYFUaJjnyxYzdx6v23UaKunU="
             alt="Placeholder"
             className="w-full h-full object-cover"

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Bar, Pie } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement } from "chart.js";
 import { format } from "date-fns";
+import Image from 'next/image';
 
 // Register necessary chart components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement);
@@ -97,8 +98,8 @@ export default function Dashboard() {
       {/* Profile Card */}
       <div className="bg-white shadow-lg rounded-xl p-6 mb-8 flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <img
-            src="https://via.placeholder.com/80"
+          <Image
+            src=""
             alt="Profile"
             className="w-20 h-20 rounded-full object-cover"
           />
