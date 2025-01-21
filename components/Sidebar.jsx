@@ -6,7 +6,7 @@ import {
   Layout,
   Users,
   Award,
-  Phone,
+  Settings,
   Building2,
 } from "lucide-react";
 
@@ -138,10 +138,10 @@ const Sidebar = () => {
 
             {/* Contact */}
             <li>
-              <a href="/" className="block">
+              <a href="/pages/settings" className="block">
                 <div className="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800 rounded-lg transition-colors duration-150 ease-in-out">
-                  <Phone className="w-5 h-5 mr-3" />
-                  <span>Contact</span>
+                  <Settings className="w-5 h-5 mr-3" />
+                  <span>Settings</span>
                 </div>
               </a>
             </li>

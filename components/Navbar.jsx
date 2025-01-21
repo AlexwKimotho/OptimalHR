@@ -33,7 +33,7 @@ export default function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/settings" className="block px-4 py-2 hover:bg-gray-700 rounded-lg">
+                  <Link href="/pages/settings" className="block px-4 py-2 hover:bg-gray-700 rounded-lg">
                     Settings
                   </Link>
                 </li>
