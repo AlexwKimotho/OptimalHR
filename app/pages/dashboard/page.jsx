@@ -126,7 +126,7 @@ export default function Dashboard() {
         </div>
 
         <div className="bg-white p-6 rounded-xl shadow-lg">
-          <h3 className="text-xl font-semibold mb-4">Today's Attendance</h3>
+          <h3 className="text-xl font-semibold mb-4">Todays Attendance</h3>
           <p className="text-3xl font-bold">{staffData.attendanceToday} Employees Clocked In</p>
         </div>
 
