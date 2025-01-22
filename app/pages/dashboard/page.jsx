@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Bar, Pie } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement } from "chart.js";
 import { format } from "date-fns";
-import Image from 'next/image';
+import Image from "next/image";
 
 // Register necessary chart components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement);
@@ -27,7 +27,7 @@ export default function Dashboard() {
       partTime: 20,
     },
     employees: 100, // Number of employees
-    attendanceToday: 60, // Today's attendance
+    attendanceToday: 60, // Todays attendance
     leaveApplications: {
       pending: 10,
       approved: 20,
